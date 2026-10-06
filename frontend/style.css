@@ -1,0 +1,297 @@
+/* Consertaê — estilos simples, pensados primeiro para celular (mobile first) */
+
+:root {
+  --cor-texto: #1f2933;
+  --cor-fundo: #ffffff;
+  --cor-fundo-claro: #f1f5f9;
+  --cor-principal: #0b5cad;
+  --cor-principal-escura: #084a8c;
+  --cor-borda: #94a3b8;
+  --cor-erro: #b42318;
+  --cor-aviso: #8a5a00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+a {
+  color: var(--cor-principal);
+}
+
+:focus-visible {
+  outline: 3px solid #f5a300;
+  outline-offset: 2px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.conteudo {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.conteudo-estreito {
+  max-width: 640px;
+}
+
+.pular {
+  position: absolute;
+  left: -999px;
+  background: #fff;
+  padding: 8px 12px;
+}
+
+.pular:focus {
+  left: 8px;
+  top: 8px;
+  z-index: 10;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background: var(--cor-principal);
+}
+
+.cabecalho-interno {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 8px 4px;
+  color: #fff;
+}
+
+/* Seções */
+.hero {
+  padding: 48px 0;
+  background: var(--cor-fundo-claro);
+}
+
+.secao {
+  padding: 40px 0;
+}
+
+.secao-clara {
+  background: var(--cor-fundo-claro);
+}
+
+/* Botões */
+.botao {
+  display: inline-block;
+  min-height: 48px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: var(--cor-principal);
+  border: 2px solid var(--cor-principal);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--cor-principal-escura);
+}
+
+.botao:disabled {
+  background: #5b6b7b;
+  border-color: #5b6b7b;
+  cursor: not-allowed;
+}
+
+.botao-secundario {
+  color: var(--cor-principal);
+  background: #fff;
+}
+
+.botao-secundario:hover {
+  background: var(--cor-fundo-claro);
+}
+
+/* Cards de serviços */
+.cards {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* Formulários */
+.campo {
+  margin-bottom: 16px;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background: #fff;
+  border: 2px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--cor-erro);
+}
+
+fieldset {
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+.opcao label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.opcao input {
+  width: 22px;
+  height: 22px;
+}
+
+.ajuda {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.erro {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  color: var(--cor-erro);
+  background: #fff;
+  border: 2px solid var(--cor-erro);
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.aviso {
+  padding: 10px 12px;
+  color: var(--cor-aviso);
+  background: #fff8e6;
+  border: 2px solid var(--cor-aviso);
+  border-radius: 6px;
+}
+
+/* Resultado */
+.resultado-caixa {
+  padding: 16px;
+  background: #fff;
+  border: 2px solid var(--cor-principal);
+  border-radius: 8px;
+}
+
+.resultado-caixa.resultado-erro {
+  border-color: var(--cor-erro);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Rodapé */
+.rodape {
+  padding: 24px 0;
+  color: #fff;
+  background: #1f2933;
+}
+
+.rodape p {
+  margin: 4px 0;
+}
+
+/* Tablet e desktop */
+@media (min-width: 720px) {
+  .hero {
+    padding: 72px 0;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consertaê — Assistente Inteligente de Serviços</title>
+  <meta name="description" content="Assistência técnica para celulares com diagnóstico guiado: descubra qual serviço pode ser adequado ao seu problema.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="pular" href="#diagnostico">Ir para o diagnóstico</a>
+
+  <header class="cabecalho">
+    <div class="conteudo cabecalho-interno">
+      <a class="logo" href="#inicio">Consertaê</a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diagnostico">Diagnóstico</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="conteudo">
+        <h1>Assistência técnica para celulares</h1>
+        <p>Seu celular está com problema? Responda algumas perguntas e descubra qual serviço pode ser adequado antes de falar com a nossa equipe.</p>
+        <a class="botao" href="#diagnostico">Descobrir qual serviço pode ser adequado</a>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS (os cards são criados pelo script.js a partir do array "servicos") -->
+    <section id="servicos" class="secao" aria-labelledby="titulo-servicos">
+      <div class="conteudo">
+        <h2 id="titulo-servicos">Nossos serviços</h2>
+        <ul id="lista-servicos" class="cards"></ul>
+      </div>
+    </section>
+
+    <!-- DIAGNÓSTICO -->
+    <section id="diagnostico" class="secao secao-clara" aria-labelledby="titulo-diagnostico">
+      <div class="conteudo conteudo-estreito">
+        <h2 id="titulo-diagnostico">Diagnóstico inteligente</h2>
+        <p>Conte o que está acontecendo com o aparelho. Não informe nome, telefone ou e-mail neste formulário.</p>
+        <p id="aviso-simulacao" class="aviso" hidden>Modo simulação: a API ainda não está configurada, então o resultado abaixo é fictício e serve apenas para testes.</p>
+
+        <form id="form-diagnostico" novalidate>
+          <div class="campo">
+            <label for="marca">Marca do celular</label>
+            <input id="marca" name="marca" type="text" maxlength="50" autocomplete="off" placeholder="Ex.: Samsung" required>
+          </div>
+
+          <div class="campo">
+            <label for="modelo">Modelo</label>
+            <input id="modelo" name="modelo" type="text" maxlength="50" autocomplete="off" placeholder="Ex.: Galaxy A54" required>
+          </div>
+
+          <div class="campo">
+            <label for="sintoma">O que está acontecendo?</label>
+            <select id="sintoma" name="sintoma" required>
+              <option value="">Selecione…</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="descricao">Descreva o problema</label>
+            <textarea id="descricao" name="descricao" rows="4" maxlength="500" aria-describedby="ajuda-descricao" required></textarea>
+            <span id="ajuda-descricao" class="ajuda">Entre 5 e 500 caracteres.</span>
+          </div>
+
+          <!-- Perguntas fixas do sintoma escolhido (criadas pelo script.js) -->
+          <div id="perguntas-fixas"></div>
+
+          <!-- Perguntas adicionais da IA (aparecem só uma vez) -->
+          <div id="perguntas-extras" hidden></div>
+
+          <p id="erro-form" class="erro" role="alert" hidden></p>
+
+          <button type="submit" id="botao-analisar" class="botao">Analisar</button>
+          <p id="status-carregamento" class="ajuda" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTADO (preenchido pelo script.js) -->
+    <section id="resultado" class="secao" aria-labelledby="titulo-resultado" tabindex="-1" hidden>
+      <div class="conteudo conteudo-estreito">
+        <h2 id="titulo-resultado">Resultado</h2>
+        <div id="resultado-corpo"></div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="secao secao-clara" aria-labelledby="titulo-contato">
+      <div class="conteudo conteudo-estreito">
+        <h2 id="titulo-contato">Solicitar atendimento</h2>
+        <p>Deixe seus dados de contato e a nossa equipe responde. Este formulário é de exemplo: no Webflow ele será substituído pelo formulário nativo.</p>
+        <form id="form-contato">
+          <div class="campo">
+            <label for="contato-nome">Nome</label>
+            <input id="contato-nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="contato-meio">Telefone ou e-mail</label>
+            <input id="contato-meio" name="contato" type="text" autocomplete="off" required>
+          </div>
+          <div class="campo">
+            <label for="contato-mensagem">Mensagem</label>
+            <textarea id="contato-mensagem" name="mensagem" rows="5"></textarea>
+          </div>
+          <button type="submit" class="botao">Enviar pedido</button>
+          <p id="contato-status" class="ajuda" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteudo">
+      <p>Consertaê — projeto acadêmico da disciplina Padrões Web para No Code e Low Code.</p>
+      <p>As recomendações são preliminares e não substituem a avaliação de um técnico.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
