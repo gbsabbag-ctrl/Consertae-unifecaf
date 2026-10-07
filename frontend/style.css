@@ -1,6 +1,6 @@
 /* Consertaê — estilos simples, pensados primeiro para celular (mobile first) */
 
-:root {
+#consertae-app {
   --cor-texto: #1f2933;
   --cor-fundo: #ffffff;
   --cor-fundo-claro: #f1f5f9;
@@ -11,11 +11,13 @@
   --cor-aviso: #8a5a00;
 }
 
-* {
+#consertae-app,
+#consertae-app * {
   box-sizing: border-box;
 }
 
-body {
+#consertae-app {
+  position: relative; /* o link "pular" fica posicionado dentro do app, não da página inteira */
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -24,53 +26,55 @@ body {
   background: var(--cor-fundo);
 }
 
-h1, h2, h3 {
+#consertae-app h1,
+#consertae-app h2,
+#consertae-app h3 {
   line-height: 1.25;
 }
 
-a {
+#consertae-app a {
   color: var(--cor-principal);
 }
 
-:focus-visible {
+#consertae-app :focus-visible {
   outline: 3px solid #f5a300;
   outline-offset: 2px;
 }
 
-[hidden] {
+#consertae-app [hidden] {
   display: none !important;
 }
 
-.conteudo {
+#consertae-app .conteudo {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-.conteudo-estreito {
+#consertae-app .conteudo-estreito {
   max-width: 640px;
 }
 
-.pular {
+#consertae-app .pular {
   position: absolute;
   left: -999px;
   background: #fff;
   padding: 8px 12px;
 }
 
-.pular:focus {
+#consertae-app .pular:focus {
   left: 8px;
   top: 8px;
   z-index: 10;
 }
 
 /* Cabeçalho */
-.cabecalho {
+#consertae-app .cabecalho {
   background: var(--cor-principal);
 }
 
-.cabecalho-interno {
+#consertae-app .cabecalho-interno {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -80,14 +84,14 @@ a {
   padding-bottom: 12px;
 }
 
-.logo {
+#consertae-app .logo {
   color: #fff;
   font-size: 1.4rem;
   font-weight: bold;
   text-decoration: none;
 }
 
-.menu {
+#consertae-app .menu {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 16px;
@@ -96,28 +100,28 @@ a {
   list-style: none;
 }
 
-.menu a {
+#consertae-app .menu a {
   display: inline-block;
   padding: 8px 4px;
   color: #fff;
 }
 
 /* Seções */
-.hero {
+#consertae-app .hero {
   padding: 48px 0;
   background: var(--cor-fundo-claro);
 }
 
-.secao {
+#consertae-app .secao {
   padding: 40px 0;
 }
 
-.secao-clara {
+#consertae-app .secao-clara {
   background: var(--cor-fundo-claro);
 }
 
 /* Botões */
-.botao {
+#consertae-app .botao {
   display: inline-block;
   min-height: 48px;
   padding: 12px 20px;
@@ -131,27 +135,27 @@ a {
   cursor: pointer;
 }
 
-.botao:hover {
+#consertae-app .botao:hover {
   background: var(--cor-principal-escura);
 }
 
-.botao:disabled {
+#consertae-app .botao:disabled {
   background: #5b6b7b;
   border-color: #5b6b7b;
   cursor: not-allowed;
 }
 
-.botao-secundario {
+#consertae-app .botao-secundario {
   color: var(--cor-principal);
   background: #fff;
 }
 
-.botao-secundario:hover {
+#consertae-app .botao-secundario:hover {
   background: var(--cor-fundo-claro);
 }
 
 /* Cards de serviços */
-.cards {
+#consertae-app .cards {
   display: grid;
   gap: 16px;
   margin: 0;
@@ -159,32 +163,32 @@ a {
   list-style: none;
 }
 
-.card {
+#consertae-app .card {
   padding: 16px;
   background: #fff;
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
 }
 
-.card h3 {
+#consertae-app .card h3 {
   margin-top: 0;
 }
 
 /* Formulários */
-.campo {
+#consertae-app .campo {
   margin-bottom: 16px;
 }
 
-label,
-legend {
+#consertae-app label,
+#consertae-app legend {
   display: block;
   margin-bottom: 4px;
   font-weight: bold;
 }
 
-input[type="text"],
-select,
-textarea {
+#consertae-app input[type="text"],
+#consertae-app select,
+#consertae-app textarea {
   width: 100%;
   min-height: 48px;
   padding: 10px;
@@ -196,42 +200,42 @@ textarea {
   border-radius: 6px;
 }
 
-input[aria-invalid="true"],
-select[aria-invalid="true"],
-textarea[aria-invalid="true"] {
+#consertae-app input[aria-invalid="true"],
+#consertae-app select[aria-invalid="true"],
+#consertae-app textarea[aria-invalid="true"] {
   border-color: var(--cor-erro);
 }
 
-fieldset {
+#consertae-app fieldset {
   margin: 0 0 16px;
   padding: 12px;
   border: 1px solid var(--cor-borda);
   border-radius: 6px;
 }
 
-.opcao {
+#consertae-app .opcao {
   display: flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
 }
 
-.opcao label {
+#consertae-app .opcao label {
   margin: 0;
   font-weight: normal;
 }
 
-.opcao input {
+#consertae-app .opcao input {
   width: 22px;
   height: 22px;
 }
 
-.ajuda {
+#consertae-app .ajuda {
   display: block;
   font-size: 0.9rem;
 }
 
-.erro {
+#consertae-app .erro {
   margin: 0 0 16px;
   padding: 10px 12px;
   color: var(--cor-erro);
@@ -241,7 +245,7 @@ fieldset {
   font-weight: bold;
 }
 
-.aviso {
+#consertae-app .aviso {
   padding: 10px 12px;
   color: var(--cor-aviso);
   background: #fff8e6;
@@ -250,18 +254,18 @@ fieldset {
 }
 
 /* Resultado */
-.resultado-caixa {
+#consertae-app .resultado-caixa {
   padding: 16px;
   background: #fff;
   border: 2px solid var(--cor-principal);
   border-radius: 8px;
 }
 
-.resultado-caixa.resultado-erro {
+#consertae-app .resultado-caixa.resultado-erro {
   border-color: var(--cor-erro);
 }
 
-.acoes {
+#consertae-app .acoes {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -269,29 +273,29 @@ fieldset {
 }
 
 /* Rodapé */
-.rodape {
+#consertae-app .rodape {
   padding: 24px 0;
   color: #fff;
   background: #1f2933;
 }
 
-.rodape p {
+#consertae-app .rodape p {
   margin: 4px 0;
 }
 
 /* Tablet e desktop */
 @media (min-width: 720px) {
-  .hero {
+  #consertae-app .hero {
     padding: 72px 0;
   }
 
-  .cards {
+  #consertae-app .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 960px) {
-  .cards {
+  #consertae-app .cards {
     grid-template-columns: repeat(4, 1fr);
   }
 }

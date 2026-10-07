@@ -1,5 +1,12 @@
 // Consertaê — Assistente Inteligente de Serviços
 // Fluxo: formulário -> objeto com os dados -> fetch() -> API -> JSON -> DOM
+//
+// Preparado para o Webflow: todo o código fica dentro de iniciarConsertae(), que só roda
+// quando a página já foi carregada. Assim o script pode ficar no <head> ou no rodapé do
+// Webflow, e os nomes abaixo não entram em conflito com outros scripts do site.
+// (O código dentro da função não foi reindentado para manter as alterações mínimas.)
+
+function iniciarConsertae() {
 
 // =====================================================
 // 1. CONFIGURAÇÃO
@@ -627,17 +634,34 @@ function novoDiagnostico() {
   campoMarca.focus({ preventScroll: true });
 }
 
+// Os campos de contato podem não existir (ou ser os do formulário nativo do Webflow, que usa os
+// mesmos ids), então cada um é conferido antes de usar.
 function irParaContato() {
-  campoContatoMensagem.value = estado.resumo;
-  statusContato.textContent = "";
-  document.getElementById("contato").scrollIntoView({ behavior: "smooth" });
-  campoContatoNome.focus({ preventScroll: true });
+  if (campoContatoMensagem) {
+    campoContatoMensagem.value = estado.resumo;
+  }
+  if (statusContato) {
+    statusContato.textContent = "";
+  }
+  const secaoContato = document.getElementById("contato");
+  if (secaoContato) {
+    secaoContato.scrollIntoView({ behavior: "smooth" });
+  }
+  if (campoContatoNome) {
+    campoContatoNome.focus({ preventScroll: true });
+  }
 }
 
-// No Webflow este formulário será o formulário nativo; aqui é só simulação local.
+// Simulação local do envio. Se o formulário for o nativo do Webflow (fica dentro de .w-form),
+// não faz nada: o próprio Webflow valida, envia e mostra as mensagens de sucesso e erro.
 function enviarContato(evento) {
+  if (formContato.closest(".w-form")) {
+    return;
+  }
   evento.preventDefault();
-  statusContato.textContent = "Pedido registrado (simulação local, nada foi enviado).";
+  if (statusContato) {
+    statusContato.textContent = "Pedido registrado (simulação local, nada foi enviado).";
+  }
 }
 
 // =====================================================
@@ -646,8 +670,21 @@ function enviarContato(evento) {
 
 mostrarServicos();
 preencherSintomas();
-avisoSimulacao.hidden = !MODO_SIMULACAO;
+if (avisoSimulacao) {
+  avisoSimulacao.hidden = !MODO_SIMULACAO;
+}
 
 formulario.addEventListener("submit", analisar);
 campoSintoma.addEventListener("change", trocarSintoma);
-formContato.addEventListener("submit", enviarContato);
+if (formContato) {
+  formContato.addEventListener("submit", enviarContato);
+}
+
+}
+
+// Roda quando o HTML do aplicativo já existe na página (no Webflow, o Embed vem antes do script)
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", iniciarConsertae);
+} else {
+  iniciarConsertae();
+}
