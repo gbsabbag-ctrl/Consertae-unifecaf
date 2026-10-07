@@ -5,10 +5,9 @@
 // 1. CONFIGURAÇÃO
 // =====================================================
 
-// TODO: preencher com a URL do endpoint depois de publicar a API na Vercel
-// (o caminho será /api/diagnostico). Enquanto estiver vazio, o site funciona
+// URL pública da API publicada na Vercel. Se ficar vazia, o site funciona
 // em MODO SIMULAÇÃO, só para desenvolvimento e testes.
-const API_URL = "";
+const API_URL = "https://consertae-api.vercel.app/api/diagnostico";
 
 const MODO_SIMULACAO = API_URL === "";
 const TEMPO_LIMITE_MS = 15000; // tempo máximo de espera pela API
@@ -287,6 +286,11 @@ function montarDados() {
 async function enviarParaApi(dados) {
   if (MODO_SIMULACAO) {
     return simularApi(dados);
+  }
+
+  // Sem internet: nem tenta enviar a requisição
+  if (!navigator.onLine) {
+    throw new Error("Você está sem conexão com a internet. Conecte-se e tente novamente.");
   }
 
   // AbortController permite cancelar o fetch se a API demorar demais
