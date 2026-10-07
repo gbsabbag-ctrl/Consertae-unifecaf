@@ -6,8 +6,17 @@
   <title>Consertaê — Assistente Inteligente de Serviços</title>
   <meta name="description" content="Assistência técnica para celulares com diagnóstico guiado: descubra qual serviço pode ser adequado ao seu problema.">
   <link rel="stylesheet" href="style.css">
+  <!-- Só para esta página de teste: no Webflow o body já vem sem margem, e o style.css não mexe no body. -->
+  <style>body { margin: 0; }</style>
 </head>
 <body>
+  <!--
+    WEBFLOW: o aplicativo inteiro fica dentro de <div id="consertae-app"> (todo o CSS é limitado a ele).
+    Para levar ao Webflow, copie este bloco (da abertura até o fechamento da div) para um elemento Embed.
+    O style.css e o script.js devem ser carregados fora do Embed (URL a definir) e não ficam dentro do bloco.
+    O script espera a página carregar sozinho, então pode ficar no <head> ou no rodapé do Webflow.
+  -->
+<div id="consertae-app">
   <a class="pular" href="#diagnostico">Ir para o diagnóstico</a>
 
   <header class="cabecalho">
@@ -125,6 +134,8 @@
       <p>As recomendações são preliminares e não substituem a avaliação de um técnico.</p>
     </div>
   </footer>
+</div>
+<!-- FIM DO BLOCO "consertae-app" -->
 
   <script src="script.js"></script>
 </body>
