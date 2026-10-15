@@ -116,7 +116,7 @@ O modelo efetivo da implantação pode ser diferente do padrão do código se `G
 2. Navegue até o Consertaê incorporado e escolha **Diagnóstico**.
 3. Informe marca, modelo, sintoma e descrição; responda às perguntas exibidas.
 4. Clique em **Analisar** e confira a recomendação preliminar, ou responda às perguntas adicionais quando solicitadas.
-5. Experimente **Novo diagnóstico**. Repita o teste em um celular para observar a responsividade.
+5. Experimente **Novo diagnóstico**. O responsável pelo projeto relatou teste bem-sucedido em celular; recomenda-se repetir a verificação em outros dispositivos e registrar captura de tela.
 6. Observe que o formulário de contato **não envia mensagens reais**.
 
 A incorporação pode apresentar barras de rolagem internas dependendo do tamanho configurado no Google Sites. O frontend também pode ser acessado diretamente pelo endereço da Vercel.
@@ -146,3 +146,9 @@ Além do README, o enunciado solicita **documento teórico** (problema, público
 ---
 
 **Projeto acadêmico — UNIFECAF | Padrões Web para No Code e Low Code.**
+
+### Atualizações de revisão (15/10/2026)
+
+- O texto visível do formulário de contato em `frontend/index.html` foi atualizado para deixar explícito que o envio é uma simulação, sem referência à futura integração com Webflow (commit `852f41f`). A alteração na aplicação pública depende do deploy correspondente.
+- O responsável pelo projeto confirmou que testou a aplicação em um celular e que ela funcionou normalmente. Esse relato não substitui capturas móveis ou testes de acessibilidade.
+- O relatório acadêmico produzido no Work contém três capturas reais (catálogo incorporado ao Google Sites, resultado de triagem e perguntas adicionais). A incorporação dos **arquivos de imagem** ao repositório ainda depende de seu upload; as imagens não estão armazenadas neste README.
