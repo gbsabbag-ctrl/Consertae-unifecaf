@@ -149,7 +149,13 @@ Essas imagens documentam o funcionamento observado em testes, mas não represent
 
 ## Apresentação acadêmica
 
-Além do README e das capturas reais acima, o enunciado solicita **documento teórico** (problema, público, ferramentas, personalização web, IA, responsividade, acessibilidade, limitações e aprendizados) e **vídeo pitch de até quatro minutos** com demonstração da aplicação. O vídeo ainda precisa ser preparado para a entrega.
+Além do README e das capturas reais acima, o enunciado solicita **documento teórico** (problema, público, ferramentas, personalização web, IA, responsividade, acessibilidade, limitações e aprendizados) e **vídeo pitch de até quatro minutos** com demonstração da aplicação. O vídeo foi gravado e publicado no YouTube; o responsável confirmou que sua duração está dentro do limite exigido.
+
+### Vídeo pitch — Demonstração do Consertaê
+
+**[Assistir à apresentação acadêmica no YouTube](https://youtu.be/SCC019fBFjA)**
+
+A gravação apresenta o projeto, a interface, o diagnóstico inteligente e as tecnologias utilizadas. Para conferir o acesso pelo avaliador, recomenda-se abrir o link em uma janela anônima.
 
 ## Limitações e próximos passos
 
