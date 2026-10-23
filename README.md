@@ -123,17 +123,33 @@ A incorporação pode apresentar barras de rolagem internas dependendo do tamanh
 
 **Modo simulação para desenvolvimento:** se `API_URL` for definida como uma string vazia em `frontend/script.js`, o frontend utiliza respostas fictícias e exibe aviso. Esse **não** é o modo configurado atualmente no código da branch `main`.
 
-## Evidências e apresentação acadêmica
+## Evidências visuais do funcionamento
 
-Para a entrega da disciplina, reunir capturas de tela reais (sem dados pessoais) de:
+As capturas abaixo foram realizadas durante a execução da aplicação e mostram etapas reais da experiência do Consertaê.
 
-- Página publicada no Google Sites com o aplicativo incorporado.
-- Catálogo de serviços e formulário de diagnóstico.
-- Perguntas adicionais da IA, quando ocorrerem.
-- Resultado de uma triagem completa.
-- Visualização em tela de celular.
+### 1. Página inicial e apresentação dos serviços
 
-Além do README, o enunciado solicita **documento teórico** (problema, público, ferramentas, personalização web, IA, responsividade, acessibilidade, limitações e aprendizados) e **vídeo pitch de até quatro minutos** com demonstração da aplicação. As capturas e o vídeo devem ser produzidos e anexados à entrega; **não estão incluídos automaticamente neste repositório**.
+![Página inicial do Consertaê e apresentação dos serviços](docs/imagens/Evidencias_Consertae_Astra/evidencia_1.jpg)
+
+*Visão inicial da aplicação publicada, com a apresentação dos serviços de assistência técnica.*
+
+### 2. Resultado do diagnóstico inteligente
+
+![Resultado de diagnóstico preliminar produzido pela IA](docs/imagens/Evidencias_Consertae_Astra/evidencia_2.jpg)
+
+*Exemplo de resultado da triagem inteligente, apresentado após a análise das informações fornecidas.*
+
+### 3. Perguntas adicionais para continuidade do diagnóstico
+
+![Perguntas adicionais feitas pela IA durante a triagem](docs/imagens/Evidencias_Consertae_Astra/evidencia_3.jpg)
+
+*Quando as informações são insuficientes, a IA solicita esclarecimentos para orientar a recomendação preliminar.*
+
+Essas imagens documentam o funcionamento observado em testes, mas não representam diagnóstico técnico definitivo. O responsável também confirmou que testou a aplicação em celular e que ela funcionou normalmente; esse teste móvel foi relatado, não ilustrado pelas três capturas acima.
+
+## Apresentação acadêmica
+
+Além do README e das capturas reais acima, o enunciado solicita **documento teórico** (problema, público, ferramentas, personalização web, IA, responsividade, acessibilidade, limitações e aprendizados) e **vídeo pitch de até quatro minutos** com demonstração da aplicação. O vídeo ainda precisa ser preparado para a entrega.
 
 ## Limitações e próximos passos
 
@@ -151,4 +167,4 @@ Além do README, o enunciado solicita **documento teórico** (problema, público
 
 - O texto visível do formulário de contato em `frontend/index.html` foi atualizado para deixar explícito que o envio é uma simulação, sem referência à futura integração com Webflow (commit `852f41f`). A alteração na aplicação pública depende do deploy correspondente.
 - O responsável pelo projeto confirmou que testou a aplicação em um celular e que ela funcionou normalmente. Esse relato não substitui capturas móveis ou testes de acessibilidade.
-- O relatório acadêmico produzido no Work contém três capturas reais (catálogo incorporado ao Google Sites, resultado de triagem e perguntas adicionais). A incorporação dos **arquivos de imagem** ao repositório ainda depende de seu upload; as imagens não estão armazenadas neste README.
+- O relatório acadêmico produzido no Work contém três capturas reais (catálogo incorporado ao Google Sites, resultado de triagem e perguntas adicionais). As três capturas reais foram posteriormente adicionadas em `docs/imagens/Evidencias_Consertae_Astra/` e incorporadas à seção de evidências visuais deste README.
